@@ -1,0 +1,493 @@
+body, ul {
+    padding: 0;
+    margin: 0;
+}
+[v-cloak] {
+    display: none;
+}
+#app {
+    height: 100%;
+}
+#header {
+    height: 60px;
+    border-bottom: 1px #1296db solid;
+}
+#header .logo {
+    width: 30%;
+    float: left;
+    color: #1296db;
+    font-size: 28px;
+    text-align: center;
+    line-height: 60px;
+}
+#header .search {
+    float: right;
+    height: 60px;
+    width: 30%;
+    position: relative;
+}
+.music-words-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    background:rgba(255,255,255,0.8);
+    overflow-y: scroll;
+}
+.music-words {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.music-word {
+    height: 50px;
+    margin-bottom: 0;
+    line-height: 50px;
+}
+.music-word-content {
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    user-select:none;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.returnCurrentWords {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    bottom: 10px;
+}
+#header .search .search-input {
+    height: 40px;
+    width: 50%;
+    position: relative;
+    top: 9px;
+    border: 1px solid #1296db;
+}
+#header .search .search-input .form-control {
+    border-radius: 0;
+    color: #1296db;
+    border: none;
+}
+#header .search .search-input .form-control:focus {
+    box-shadow: none;
+}
+#search-music {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    line-height: 40px;
+    border: 1px solid #1296db;
+    top: 9px;
+    border-left: 0;
+    cursor: pointer;
+}
+#search-music .icon {
+    margin-top: -1px;
+}
+#search-music:hover {
+    background-color: cornsilk;
+}
+.keyword-list {
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    margin-top: 1px;
+    width: 50%;
+    border: 1px solid #1296db;
+    border-top: none;
+    height: 299px;
+    overflow: hidden;
+    color: #1296db;
+}
+.keyword-list .result-list {
+    list-style: none;
+}
+.keyword-list .result-list .result-item {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.keyword-list .result-list .result-item:hover {
+    background-color: #1296db;
+    color: white;
+    font-size: 18px;
+}
+#content {
+    height: 501px;
+    border-bottom: 1px solid #999999;
+}
+#content #musics-list {
+    width: 30%;
+    background-color: white;
+    border-bottom: 1px solid #1296db;
+    border-right: 1px solid #1296db;
+}
+#content #musics-list .music-items {
+    height: 450px;
+    overflow: auto;
+    margin-bottom: 0;
+}
+.music-title {
+    display: inline-block;
+    width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+}
+.title-content {
+    font-weight: 600;
+    background: -webkit-linear-gradient(45deg, cornsilk, #70f7fe, #bfb5dd, cornflowerblue);
+                -moz-linear-gradient(45deg, cornsilk, #70f7fe, #bfb5dd, cornflowerblue);
+                -ms-linear-gradient(45deg, cornsilk, #70f7fe, #bfb5dd, cornflowerblue);
+    color: transparent;
+    /*设置字体颜色透明*/
+    -webkit-background-clip: text;
+    /*背景裁剪为文本形式*/
+    animation: ran 10s linear infinite;
+    cursor: pointer;
+    animation-play-state: running;
+}
+@keyframes ran {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 0;
+    }
+}
+/* 定义音乐图标动画规则 */
+@-webkit-keyframes circle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes circle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-ms-keyframes circle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes circle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes circle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.nav-music {
+    height: 50px;
+    margin: auto;
+    line-height: 50px;
+    border-bottom: 1px #555555 solid;
+}
+.nav-music span {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.nav-music span:hover {
+    cursor: pointer;
+    background-color: coral;
+}
+.noPlayMusicTip {
+    text-align: center;
+    line-height: 450px;
+    font-size: 24px;
+    color: #1296db;
+}
+#content #musics-list .music-items .music-item {
+    background-color: snow;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid turquoise;
+    font-size: 22px;
+    cursor: pointer;
+    color: #1296db;
+    opacity: 0.7;
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    user-select:none;
+}
+#content #musics-list .music-items .music-item:hover {
+    font-size: 25px;
+    background-color: azure;
+}
+.play-icon {
+    float: right;
+    z-index: 20;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 30px;
+}
+@media screen and (max-width: 800px){
+    .play-icon {
+        display: none;
+    }
+}
+.currentTime, .duration {
+    color: #1296db;
+
+    margin-bottom: 10px;
+}
+.music-name {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#music-desc {
+    width: 40%;
+    height: 501px;
+    margin: -501px 30%;
+    border-right: 1px solid #999999;
+}
+#show-music-img {
+    height: 100%;
+    background-size: contain;
+}
+#show-err-text h3 {
+    text-align: center;
+    line-height: 600px;
+}
+.icon {
+    cursor: pointer;
+}
+.control-icon {
+    position: absolute;
+    bottom: 40px;
+    left: -2px;
+}
+.music-progress-container {
+    display: inline-block;
+    width: 0;
+}
+.timeText {
+    display: inline-block;
+}
+.percent {
+    width: 700px;
+    display: inline-block;
+    height: 8px;
+    border: 1px solid #1296db;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #1296db;
+}
+@media screen and (max-width: 1100px) {
+    .percent {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .percent {
+        width: 300px;
+    }
+    #music-desc {
+        width: 70%;
+    }
+    #comments {
+        width: 0;
+    }
+}
+@media screen and (max-width: 700px) {
+    .percent {
+        width: 100px;
+    }
+}
+.music-inner {
+    background-color: #1296db;
+    position: absolute;
+    height: 6px;
+    border-radius: 4px;
+    margin-top: 0.4px;
+}
+.volumeProgress {
+    display: inline-block;
+    border: 1px solid #1296db;
+    border-radius: 4px;
+    width: 100px;
+    height: 8px;
+}
+.volume-inner {
+    height: 6px;
+    background-color: #1296db;
+    border-radius: 4px;
+    margin-top: 0.4px;
+    margin-left: -1px;
+    position: absolute;
+}
+#comments {
+    width: 30%;
+    height: 500px;
+    margin-left: 70%;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+.commentUserName {
+    font-size: 20px;
+}
+.comment {
+    border-bottom: 1px solid #1296db;
+    margin: auto;
+    padding: 5px;
+}
+.pageControl {
+    text-align: center;
+    font-size: 25px;
+    color: #1296db;
+    cursor: pointer;
+}
+.commentTitle {
+    border-bottom: 2px solid #1296db;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 0;
+    color: #1296db;
+}
+#play-control {
+    float: left;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    padding-left: 5px;
+    bottom: 0;
+    line-height: 50px;
+    background-color: #bfb5dd;
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    user-select:none;
+}
+
+
+.changeVolume {
+    cursor: pointer;
+}
+
+/* 滚动条样式设置 */
+.music-items::-webkit-scrollbar,
+#comments::-webkit-scrollbar,
+.music-words-wrap::-webkit-scrollbar,
+#play-control::-webkit-scrollbar{
+    width: 4px;
+    height: 5px;
+}
+.music-items::-webkit-scrollbar-thumb,
+#comments::-webkit-scrollbar-thumb,
+.music-words-wrap::-webkit-scrollbar-thumb,
+#play-control::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+}
+.music-items::-webkit-scrollbar-track,
+#comments::-webkit-scrollbar-track,
+.music-words-wrap::-webkit-scrollbar-track,
+#play-control::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
